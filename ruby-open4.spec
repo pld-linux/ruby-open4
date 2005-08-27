@@ -2,6 +2,7 @@
 %define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
 %define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
 Summary:	Ruby open3 with exit reporting
+Summary(pl):	open3 w Rubym z raportowaniem wyj¶cia
 Name:		ruby-open4
 Version:	0.1.0
 Release:	1
@@ -18,6 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Ruby open3 with exit reporting.
+
+%description -l pl
+open3 w Rubym z raportowaniem wyj¶cia.
 
 %prep
 %setup -q  -n open4-%{version}
