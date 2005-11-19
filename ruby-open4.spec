@@ -1,6 +1,3 @@
-%define	ruby_ridir	%(ruby -r rbconfig -e 'include Config; print File.join(CONFIG["datadir"], "ri", CONFIG["ruby_version"], "system")')
-%define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
-%define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
 Summary:	Ruby open3 with exit reporting
 Summary(pl):	open3 w Rubym z raportowaniem wyj¶cia
 Name:		ruby-open4
@@ -11,6 +8,7 @@ Group:		Development/Languages
 Source0:	http://www.codeforpeople.com/lib/ruby/open4/open4-%{version}.tgz
 # Source0-md5:	aab7035d09a19af38a7468d7f1cb93c9
 URL:		http://www.codeforpeople.com/lib/ruby/open4/
+BuildRequires:	rpmbuild(macros) >= 1.263
 BuildRequires:	ruby
 BuildRequires:	ruby-devel
 BuildRequires:	setup.rb
@@ -24,12 +22,12 @@ Ruby open3 with exit reporting.
 open3 w Rubym z raportowaniem wyj¶cia.
 
 %prep
-%setup -q  -n open4-%{version}
+%setup -q -n open4-%{version}
+cp %{_datadir}/setup.rb .
 
 %build
-cp /usr/share/setup.rb .
 ruby setup.rb config \
-  --rbdir=%{ruby_rubylibdir} \
+	--rbdir=%{ruby_rubylibdir} \
 	--sodir=%{ruby_archdir}
 
 rdoc --ri -o ri
