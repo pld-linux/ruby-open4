@@ -1,5 +1,5 @@
 Summary:	Ruby open3 with exit reporting
-Summary(pl.UTF-8):   open3 w Rubym z raportowaniem wyjścia
+Summary(pl.UTF-8):	open3 w Rubym z raportowaniem wyjścia
 Name:		ruby-open4
 Version:	0.1.0
 Release:	2
