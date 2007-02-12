@@ -1,5 +1,5 @@
 Summary:	Ruby open3 with exit reporting
-Summary(pl):	open3 w Rubym z raportowaniem wyj∂cia
+Summary(pl.UTF-8):   open3 w Rubym z raportowaniem wyj≈õcia
 Name:		ruby-open4
 Version:	0.1.0
 Release:	2
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Ruby open3 with exit reporting.
 
-%description -l pl
-open3 w Rubym z raportowaniem wyj∂cia.
+%description -l pl.UTF-8
+open3 w Rubym z raportowaniem wyj≈õcia.
 
 %prep
 %setup -q -n open4-%{version}
