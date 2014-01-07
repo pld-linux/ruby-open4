@@ -10,7 +10,7 @@ Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
 # Source0-md5:	bbe40a8cca8985a242aa1e71b06842f9
 URL:		https://github.com/ahoward/open4
 BuildRequires:	rpm-rubyprov
-BuildRequires:	rpmbuild(macros) >= 1.656
+BuildRequires:	rpmbuild(macros) >= 1.665
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,6 +52,9 @@ Dokumentacji w formacie ri dla %{pkgname}.
 rm lib/open4-%{version}.rb
 
 %build
+# write .gemspec
+%__gem_helper spec
+
 rdoc --ri -o ri
 rdoc -o rdoc
 rm -r ri/{ARGV,Object}
@@ -60,10 +63,11 @@ rm ri/created.rid
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_ridir},%{ruby_rdocdir}/%{name}-%{version}}
+install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_specdir},%{ruby_ridir},%{ruby_rdocdir}/%{name}-%{version}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_vendorlibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 cp -a rdoc/* $RPM_BUILD_ROOT%{ruby_rdocdir}/%{name}-%{version}
+cp -p %{pkgname}-%{version}.gemspec $RPM_BUILD_ROOT%{ruby_specdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -72,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README*
 %{ruby_vendorlibdir}/%{pkgname}.rb
+%{ruby_specdir}/%{pkgname}-%{version}.gemspec
 
 %files rdoc
 %defattr(644,root,root,755)
