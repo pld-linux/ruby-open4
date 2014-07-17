@@ -3,7 +3,7 @@ Summary:	Ruby open3 with exit reporting
 Summary(pl.UTF-8):	open3 w Rubym z raportowaniem wyjścia
 Name:		ruby-%{pkgname}
 Version:	1.3.0
-Release:	1
+Release:	2
 License:	GPL v2+ or Ruby
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
