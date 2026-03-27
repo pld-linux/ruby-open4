@@ -2,12 +2,12 @@
 Summary:	Ruby open3 with exit reporting
 Summary(pl.UTF-8):	open3 w Rubym z raportowaniem wyjścia
 Name:		ruby-%{pkgname}
-Version:	1.3.0
-Release:	2
+Version:	1.3.4
+Release:	1
 License:	GPL v2+ or Ruby
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	dc0affafe0138d5f35e45cb34db57ccd
+# Source0-md5:	24c0bb0abdbf098ad116c1bb5a6a1905
 URL:		https://github.com/ahoward/open4
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
